@@ -1,7 +1,7 @@
 import matplotlib.pyplot as sai_1
 import pandas as sai_2
 
-url=""
+url="https://github.com/sridurga-k/expp2/blob/main/exp2.csv"
 weather_data = sai_2.read_csv(url)
 weather_data['Date'] = sai_2.to_datetime(weather_data['Date'])
 print("sai laxma reddy 221191101116")
