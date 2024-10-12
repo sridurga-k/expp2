@@ -1,0 +1,51 @@
+import matplotlib.pyplot as sai_1
+import pandas as sai_2
+
+url=""
+weather_data = sai_2.read_csv(url)
+weather_data['Date'] = sai_2.to_datetime(weather_data['Date'])
+print("sai laxma reddy 221191101116")
+# Scatter Plot
+sai_1.figure(figsize=(10, 6))
+sai_1.scatter(weather_data['Temperature'], weather_data['Humidity'], color='blue')
+sai_1.title('Temperature vs. Humidity')
+sai_1.xlabel('Temperature (°C)')
+sai_1.ylabel('Humidity (%)')
+sai_1.grid(True)
+sai_1.gca().spines['top'].set_visible(False)
+sai_1.gca().spines['right'].set_visible(False)
+sai_1.show()
+
+# Horizontal Bar Chart
+sai_1.figure(figsize=(10, 6))
+sai_1.barh(weather_data['Date'].dt.strftime('%Y-%m-%d'), weather_data['Wind Speed'], color='green')
+sai_1.title('Average Wind Speed by Day')
+sai_1.xlabel('Wind Speed (km/h)')
+sai_1.ylabel('Date')
+sai_1.grid(True)
+sai_1.gca().spines['top'].set_visible(False)
+sai_1.gca().spines['right'].set_visible(False)
+sai_1.show()
+
+# Histogram
+sai_1.figure(figsize=(10, 6))
+sai_1.hist(weather_data['Temperature'], bins=10, color='purple', edgecolor='black')
+sai_1.title('Temperature Distribution')
+sai_1.xlabel('Temperature (°C)')
+sai_1.ylabel('Frequency')
+sai_1.grid(True)
+sai_1.gca().spines['top'].set_visible(False)
+sai_1.gca().spines['right'].set_visible(False)
+sai_1.show()
+
+# Time Series Data (Temperature)
+sai_1.figure(figsize=(10, 6))
+sai_1.plot(weather_data['Date'], weather_data['Temperature'], marker='o', color='red')
+sai_1.title('Temperature over Time')
+sai_1.xlabel('Date')
+sai_1.ylabel('Temperature (°C)')
+sai_1.grid(True)
+sai_1.xticks(rotation=45)
+sai_1.gca().spines['top'].set_visible(False)
+sai_1.gca().spines['right'].set_visible(False)
+sai_1.show()
